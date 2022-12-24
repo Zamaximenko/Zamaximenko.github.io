@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                // Script for the contacts popover
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+                .forEach(popover => {
+                    new bootstrap.Popover(popover)
+                })
+
+                // Script for the dropdown menu
+                let dropdown = document.querySelector(".dropdown");
+                dropdown.addEventListener("hover", function()
+                {
+                    var dropdownMenu = this.children.filter(n => n.classList.contains('dropdown-menu'))
+                    if(dropdownMenu.is(":visible")){
+                        dropdownMenu.parent().toggleClass("open");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header class="p-3">
+            <div class="container">
+                <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/index.html" class="d-flex p-2 align-items-center mb-2 mb-lg-0 text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="Black" role="img" aria-label="Homepage" class="bi bi-cup-hot" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6H.5ZM13 12.5a2.01 2.01 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5ZM2.64 13.825 1.123 7h11.754l-1.517 6.825A1.5 1.5 0 0 1 9.896 15H4.104a1.5 1.5 0 0 1-1.464-1.175Z"/>
+                            <path d="m4.4.8-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 3.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8Zm3 0-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 6.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8Zm3 0-.003.004-.014.019a4.077 4.077 0 0 0-.204.31 2.337 2.337 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.198 3.198 0 0 1-.202.388 5.385 5.385 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 9.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8Z"/>
+                        </svg>
+                    </a>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="index.html" class="nav-link px-3 text-dark">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">My interests</a>
+                            <div class="dropdown-menu">
+                                <a href="coffee.html" class="dropdown-item">Coffee</a>
+                                <a href="movies.html" class="dropdown-item">Movies</a>
+                                <a href="#" class="dropdown-item text-secondary">IT</a>
+                            </div>
+                        </li>
+                        <li><a href="#" class="nav-link text-dark" data-bs-title="Email: maximenko.zaxar@gmail.com" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="focus" data-bs-content="Phone number: +9 (999) 999 99-99">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h4 class="text-center pb-3">What I do at work?</h4>
+            <div class="container px-3 pb-3">
+                <div class="row align-items-center">
+                    <div class="col-5 text-left ps-3 pe-5 py-3">
+                        <p-v>I work as a <b>BI-analyst</b> in a financial department. What does it mean?</p-v>
+                        <p-v>My main responsibility is providing a good-looking and user-friendly visualisation of a financial data for analytics I work closely with. In other words, <b>I create dashboards.</b> Then these dashboards are shown to the top-management at the quarterly meetings and help them at making strategic decisions.</p-v>
+                        <p-v>Here you can see an example of a typical dashboard. Mine are better, but NDA :)</p-v>
+                    </div>
+                    <div class="col-7">
+                        <img src="https://i.pinimg.com/564x/b8/e0/0b/b8e00bae79668f88e84d267e0a5e622a.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+            <div class="container px-3 pb-3">
+                <div class="row align-items-center">
+                    <div class="col-5 ps-3 pe-5 py-3">
+                        <img src="https://i.pinimg.com/564x/c0/cf/e8/c0cfe89ac1c68a874cd682a860e4c6b9.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="col-7 text-left p-5">
+                        <p-v>The other side of my work is automation and optimization of financial processes.</p-v>
+                        <p-v>At the very beginning of my work journey, it was necessary to establish a financial system convenient for analysts. That is why my team established a data flow between relational database (that is inconvenient for financial data analysis) and multidimansional database (that is more suitable for this) and now I continue to ensure to smoothness and correctness of this flow of data.</p-v>
+                        <p-v>Besides, I usually write scripts (SQL, Bash, MDX - specific multidimensional scripts) that automate the routine financial calculations and greatly decrease the time spent on them, thus giving my colleagues more time to do actual analysis of data and get better insights from it.</p-v>
+                        <p-v>The picture illustrates multidimensional database I work with.</p-v>
+                    </div>
+                </div>
+            </div>
+            <h4 class="text-center pb-3">My interests in IT world</h4>
+            <div class="container px-3 py-2">
+                <div class="row gy-5">
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <img src="https://i.pinimg.com/564x/0e/c2/94/0ec294ac6fc6e583ad648f9aefd01666.jpg" class="card-img-top img-fluid" object-fit="cover">
+                            <div class="card-body">
+                            <h5 class="card-title">Machine Learning</h5>
+                            <p class="card-text">ML is a powerful tool that provides companies with great opportunities to analyze their data more thoroughly and accurate, increase the precision of data forecasts and make better strategic decisions.</p>
+                            <p class="card-text">Machine learning algorithms power Walmart product recommendations, surge pricing at Uber, fraud detection at top financial institutions, content that Twitter, LinkedIn, Facebook and Instagram display on social media feeds, etc. It is a great field worth diving in!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <img src="https://s3-eu-west-1.amazonaws.com/landingi-editor-uploads/FtlCnhRe/data_engineering_img1.png" class="card-img-top img-fluid">
+                            <div class="card-body">
+                            <h5 class="card-title">Data Engineering</h5>
+                            <p class="card-text">I've been working with databases for more than 3 years and I do like it: working with data, writing code is very soothing for me, I can easily enter the flow state and do my job. Besides, feeling that you are creating something that everyone in a company use and appreciate (even if they don't know it) is awesome.</p>
+                            <p class="card-text">Generally, data engineer is a person who build systems that collect, manage, and convert raw data into usable information. I feel like such work can give you the opportunity to make a tangible difference in a world where we already produce exabytes of data everyday.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <img src="https://i.pinimg.com/564x/1a/9c/39/1a9c3904e4a7bac215219ed9a3452332.jpg" class="card-img-top img-fluid">
+                            <div class="card-body">
+                            <h5 class="card-title">Web development</h5>
+                            <p class="card-text">While doing backend activities is great and very important for the company and final product and I would gladly try to work as a backend developer, it's so depressing that clients or consumers don't actually know about your work at all (until something crashes).</p>
+                            <p class="card-text">That is why I also interested in a frontend side of web-development: there is a feeling of creating something big and important that will be appreciated not only by your colleagues, but potentially by millions of people. Besides, it's just fun!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <footer class="py-2 pt-5 text-muted text-center text-small">
+        <p class="pb-1">© 2022 Maximenko Zakhar</p>
+    </footer>
+</html>

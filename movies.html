@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                // Script for the contacts popover
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+                .forEach(popover => {
+                    new bootstrap.Popover(popover)
+                })
+
+                // Script for the dropdown menu
+                let dropdown = document.querySelector(".dropdown");
+                dropdown.addEventListener("hover", function()
+                {
+                    var dropdownMenu = this.children.filter(n => n.classList.contains('dropdown-menu'))
+                    if(dropdownMenu.is(":visible")){
+                        dropdownMenu.parent().toggleClass("open");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header class="p-3">
+            <div class="container">
+                <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="index.html" class="d-flex p-2 align-items-center mb-2 mb-lg-0 text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="Black" role="img" aria-label="Homepage" class="bi bi-cup-hot" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6H.5ZM13 12.5a2.01 2.01 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5ZM2.64 13.825 1.123 7h11.754l-1.517 6.825A1.5 1.5 0 0 1 9.896 15H4.104a1.5 1.5 0 0 1-1.464-1.175Z"/>
+                            <path d="m4.4.8-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 3.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8Zm3 0-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 6.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8Zm3 0-.003.004-.014.019a4.077 4.077 0 0 0-.204.31 2.337 2.337 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.198 3.198 0 0 1-.202.388 5.385 5.385 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 9.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8Z"/>
+                        </svg>
+                    </a>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="index.html" class="nav-link px-3 text-dark">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">My interests</a>
+                            <div class="dropdown-menu">
+                                <a href="coffee.html" class="dropdown-item">Coffee</a>
+                                <a href="#" class="dropdown-item text-secondary">Movies</a>
+                                <a href="career.html" class="dropdown-item">IT</a>
+                            </div>
+                        </li>
+                        <li><a href="#" class="nav-link text-dark" data-bs-title="Email: maximenko.zaxar@gmail.com" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="focus" data-bs-content="Phone number: +9 (999) 999 99-99">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h3 class="text-center pb-3">Horrors</h3>
+            <div class="container px-3 py-2">
+                <div class="row gy-5">
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade1" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/c4/c9/03/c4c90317c18ca9b205a9daf2c33c9aab.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/16/f7/b5/16f7b592393fd8f8d9b2f239d9f84f7b.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/9d/98/d2/9d98d21490f1f75d46e207c2df5ea7b1.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade1" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade1" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Horror. Why watch it?</h5>
+                            <p class="card-text">Fear is surely not everyone's cup of tea (or coffee). So why is it that some people crave such frightening experiences of sitting in a dark room and watching a chilling movie?</p>
+                            <p class="card-text">By watching horrors we can gain some novel experiences (i.e. live out alternative realities — from zombie outbreaks to alien infestations) and (safely) satisfy our curiosity about the dark side of human psyche.</p>
+                            <p class="card-text">Finally, horror movies have a competitive advantage against other genres (with a few exceptions) - it makes you actually worry about characters, as the director can kill them without hesitation, and this condition always makes me waiting for the ending with excitement.</p>
+                            <p class="card-text"><b>Recommended movies:</b> "Alien" / "Aliens", "The Thing", "Cloverfield", "A Nightmare on Elm Street", "Scream", "Candyman", "Halloween", "The Silence of the Lambs", "Saw", "Black Christmas"</p>
+                            <p class="card-text"><b>Favourite directors:</b> John Carpenter, Wes Craven, Ridley Scott, James Wan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade2" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/90/9f/4e/909f4ee3a9921932f85d7692fe8d13ad.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/e8/14/c5/e814c51ba33d11905e877668ab027b5b.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/ac/ec/b9/acecb9dca311b5f6f2a5cb57a4762673.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade2" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade2" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Horror. Low genre?</h5>
+                            <p class="card-text">It is widely believed that horror is a "low" genre and these cheap movies are nothing more than a bloody mayhem or a bunch of screamers to make your heart beats faster. Though, among such cheap movies there always were some outstanding horrors, which are now considered classic and are evaluated at par with dramas or other "high" genre movies.</p>
+                            <p class="card-text">Moreover, nowadays such "elevated horrors" or "post-horrors" (though I don't like these terms) are a big thing: they are starring world-renowned actors, explore serious real-life issues and are premiered at the best film festivals (Cannes, Sundance, Venice).</p>
+                            <p class="card-text"><b>Recommended movies:</b> "The Exorcist", "Psycho", "Carnival of Souls", "Suspiria", "Rosemary Baby", "The Phantom of The Opera", "Misery", "Re-Animator", "Freaks", "Nosferatu", "It Follows"</p>
+                            <p class="card-text"><b>Favourite directors:</b> Dario Argento, Tod Browning, Alfred Hitchcock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/f5/c6/fb/f5c6fb1d87005550bc66acf11f3669cf.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/8b/8c/45/8b8c4514d39fd8adb996a06366df7401.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/ef/57/18/ef5718f005eea2c57b49cafff212a7e3.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade3" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade3" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Horror. Expanding the boundaries</h5>
+                            <p class="card-text">Due to the specifics of genre, horror directors are not bound by any frames (except for budget), so we can enjoy the most crazy plots and concepts that we can ever imagine (for example, there is a movie called "Rubber": it's about a tire that comes to life and kills people with psychokinetic powers. Can you imagine that???)</p>
+                            <p class="card-text">Besides, many horror directors and screenwriters have been using the same tropes over and over again, so there emerged some horror movies that satirizes these clichés (the first successful one was "Scream").</p>
+                            <p class="card-text"><b>Recommended movies:</b> "Evil Dead 2", "The Fly", "Gremlins", "Scream" (yes, again, deal with it), "Cabin in the Woods", "Tucker and Dale vs Evil", "An American Werewolf in London", "Happy Death Day"</p>
+                            <p class="card-text"><b>Favourite directors:</b> Sam Raimi, David Cronenberg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-center py-3">Dramas and melodramas</h3>
+                <div class="row gy-5">
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade4" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/b6/14/b6/b614b64ca4696327679c30de523790ca.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/72/33/4d/72334dc2b4d97d1eb4ad2a6566f376e5.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/2c/2a/39/2c2a39c83b4e969bc93574f9f33218cb.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade4" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade4" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Drama. The reflection of reality</h5>
+                            <p class="card-text">It might be great when movies create a doorway to another fictional world, be it a dark scary place or a fantasy kingdom. But sometimes all you need is to look in the mirror and have a thought about your own life, your problems and feelings. And that's when drama movies come to light.</p>
+                            <p class="card-text">The best thing about drama is that it's concept is very simple, familiar and relatable. Main characters are not superheroes or "the chosen ones", they are ordinary people with common problems: they might be unlucky or bad at love, might have financial problems or long hated job, they might be in depression or in existential crisis. And what I really love about dramas is that they might give you role models and prepare you for most situations you can encounter in your life or even help you find the way out of problems you have been stuck with.</p>
+                            <p class="card-text">So, wathing dramas is like peeking through the keyhole and observing the life of your neighbours during the most significant periods of their lives. Isn't it exciting?</p>
+                            <p class="card-text"><b>Recommended movies:</b> "Mirror", "Three Colours: Blue / White / Red", "Breaking the Waves", "Melancholia", "The Truman Show", "Forrest Gump", "Requiem for a Dream", "American Beauty"</p>
+                            <p class="card-text"><b>Favourite directors:</b> Andrei Tarkovsky, Lars von Trier, Darren Aronofsky, Krzysztof Kieślowski</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade5" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/0a/cd/21/0acd21c30ea6e5f932d295dd22d4a140.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/736x/fe/43/3b/fe433b6b37b11307d50a917518303b19.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/46/02/a1/4602a1d5dc05ffe33e472aceb5ca132e.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade5" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade5" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Drama. Coming of age</h5>
+                            <p class="card-text">What do you recall from youth? Probably your first love, the first signs of independence from parents, the first party, the first temporary job, maybe the first time you drive. See the pattern? Youth is the time when you have a lot of first experiences and unfortunately, it won't happen again. That's the reason of popularity of coming-of-age dramas, which allow you to somehow relive these wonderful moments of your life and feel young again.</p>
+                            <p class="card-text">The other reason why we might love these "teen" stories as adults is that it's comfortable: we know what to expect because we've lived through that formative period of emotional turmoil. As we get older, watching a couple of just-18-year-olds fall in love, graduate from school and get the desired freedom gives us an opportunity to sit back and enjoy without having to think too much. Because now, we're the ones who know better. </p>
+                            <p class="card-text"><b>Recommended movies:</b> "Breakfast Club", "Ferris Bueller's Day Off", "Lady Bird", "Eighth Grade", "Moonrise Kingdom", "Little Women"</p>
+                            <p class="card-text"><b>Favourite directors:</b> John Hughes, Greta Gerwig</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade6" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/d9/be/41/d9be41986853da7172a25f9ef67e9784.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/62/ff/db/62ffdb2b3a2527c32d007102091ae212.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/73/8c/26/738c26b67a35d16b4bf27f24acede711.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade6" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade6" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Drama / Romcom. Love is in the air</h5>
+                            <p class="card-text">Have you ever fallen in love? What a wonderful feeling! What can be better than watching a heart-warm movie with your loved one? And even if you are single, such stories can inspire or encourage you to go out seeking your true love.</p>
+                            <p class="card-text">Melodramas and romcoms are actually fairy tales for adults and that is the reason of their popularity. We love this ideal imagery of "perfect relationship" or "love-at-first-glance" (although it might be dangerous for actual relationship, as it significantly raises your expectations to the unreachable levels).</p>
+                            <p class="card-text">But not all melodramas illustrate sugar coated relationships: sometimes it shows the moments of parting, breaking up or even divorce. In this cases, watching such movies might have a therapeutic effect and help you cope with your sorrow.</p>
+                            <p class="card-text"><b>Recommended movies:</b> everything with Audrey Hapburn, "Le Fabuleux destin d'Amélie Poulain", "La vie d'Adèle", "Manhattan", "La-La-Land", "Her", "Marriage Story", "About Time", "500 Days of Summer", "Scott Pilgrim vs. the World"</p>
+                            <p class="card-text"><b>Favourite directors:</b> Woody Allen, Noah Baumbach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-center py-3">Animation</h3>
+                <div class="row gy-5">
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade7" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/31/e0/b5/31e0b59d50cfe49c2159d8d0e923b4b9.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/23/ee/e6/23eee682a2e5b6db2bdb69685484d217.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/93/35/3f/93353f8a75cd7aef3b61ff8d33a9e4f2.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade7" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade7" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Cartoon. When we were young</h5>
+                            <p class="card-text">I do love animation, and the main reason sends us back to the coming-of-age dramas: it brings back warm memories and the joy of reuniting with the past yourself. Cartoons remind us of our childhood ideals, and immersing in their magical setting helps us remember what it was like to be a child. What's more, re-watching old cartoons often allows us to re-assess some of those ideals and see how we have grown.</p>
+                            <p class="card-text">The other thing I adore in animation is the variety of techniques artists use to express their ideas. There are traditional animation (2D), 3D animation, stop-motion, clay animation and many others. And with the change of technique the whole perception of cartoon may change as well.</p>
+                            <p class="card-text">Finally, animation is a form of art and simply beholding the beauty of it is enough to have a good time. But there's more in it: thanks to its unlimited expressive potential, animation can grant you access to differet worlds and the only frame is the imaginative power of the artist.</p>
+                            <p class="card-text"><b>Favourite movies:</b> Everything that Pixar / Disney make, except for "Cars"; Trilogy by Tomm Moore, "Over the Garden Wall", "Klaus", "Coraline", "Fantastic Mr. Fox", "The Nightmare Before Christmas", "Corpse Bride"</p>
+                            <p class="card-text"><b>Favourite director:</b> Tomm Moore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade8" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/86/ee/f8/86eef8f82aac1fa84fa2b767c8b5804f.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/bd/a3/b1/bda3b15f26a4f15cba45ce6566d2367e.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/1c/e8/d2/1ce8d226706a8ca51ee496e5cd3c0dcc.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade8" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade8" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Anime. Going East</h5>
+                            <p class="card-text">So much can be discovered about nations just by looking at the kind of animation they enjoy and produce and Japan is the great example of it. Though Japan is a developed country that is influenced by globalisation and westernization, japanese animation (and culture in general) have been successfully preserving it's identity for the last decades.</p>
+                            <p class="card-text">Indeed, you can easily recognize anime not only due to it's distinctive style, but due to the craziness of japanese artists as well: I personally think that anime usually contain more interesting, innovative and visually more striking fantasy worlds, than western cartoons do.</p>
+                            <p class="card-text">Besides, what's common among the greatest anime directors is the close attention to the environmental problems, and I can't help respecting them for addressing such serious issues and making people think about what's good and bad for the future of humanity in such an enjoyable and playful way.</p>
+                            <p class="card-text"><b>Recommended anime:</b> Just watch everything by these geniuses below</p>
+                            <p class="card-text"><b>Favourite directors:</b> Hayao Miyazaki, Makoto Shinkai, Satoshi Kon, Mamoru Hosoda</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch">
+                        <div class="card mx-auto border-0">
+                            <div id="carouselFade9" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000" data-bs-pause=false>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://i.pinimg.com/564x/b1/79/02/b17902aa6ccfe0f2d04e1996ce2d2da8.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/15/64/76/1564762f09b62366944629ed51bea7d2.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://i.pinimg.com/564x/2b/0e/50/2b0e50e009183e758ac8343024199cd3.jpg" class="card-img-top img-fluid" style="height: 28vw;">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade9" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselFade9" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Shrek</h5>
+                            <p class="card-text">The first one. The best one. Undisputed masterpiece.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <footer class="py-2 pt-5 text-muted text-center text-small">
+        <p class="pb-1">© 2022 Maximenko Zakhar</p>
+    </footer>
+</html>

@@ -1,0 +1,55 @@
+/* Trick to fix the problem of shifting of page elements when scrollbar appears */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    margin-top: 0;
+    min-width: 90%;
+}
+.popover {
+    --bs-popover-max-width: 90%;
+    --bs-popover-header-font-size: var(--bs-font-size-sm);
+    --bs-popover-header-bg: var(--bs-white);
+    --bs-popover-header-color: var(--bs-dark);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+}
+.card{
+    max-width: 22rem;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+.card-img-top {
+    width: 100%;
+    height: 22vw;
+
+}
+p-v {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'Times New Roman', sans-serif;
+    font-size:16px;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
